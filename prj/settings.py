@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f(^*2zr1begl&p%c4!)i5_^l&i)+=*lskhj4flwz*^aen#h$u#'
+SECRET_KEY = 'django-insecure-qr%4fo2$gv0rg4pv8*v#l1k-=&@gb6vm0mtt^fus8th@8tmhzk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'djangoprj',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -53,11 +51,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'prj.urls'
-
+import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'djangoprj/templates/djangoprj/'),],
+        'DIRS': [os.path.join(BASE_DIR, 'news/templates/news'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
