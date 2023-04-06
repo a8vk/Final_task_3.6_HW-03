@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import index, detail
 
-urlpatterns=[
-    path('', index, name='index'),
-    path('new/<str:slug>', detail, name='detail'),
+urlpatterns = [
+    path('', index, name='default'),
+    path('<str:slug>', detail, name='detail'),
 ]
