@@ -9,7 +9,7 @@ class New(models.Model):
     slug = models.SlugField(max_length=128, unique=True)
 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'slug': self.slug})
+        return reverse('detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return '{}'.format(self.title)

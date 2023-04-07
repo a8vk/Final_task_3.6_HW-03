@@ -8,6 +8,6 @@ def index(request):
     return render(request, 'default.html', {'news': news})
 
 
-def detail(reguest, slug):
-    new = New.objects.get(slug__iexact=slug)  # ищем точное совпадение slug
-    return render(reguest, 'detail.html', context={'new': new})
+def detail(request, pk):
+    new = New.objects.get(pk=pk)
+    return render(request, 'detail.html', context={'new': new})
