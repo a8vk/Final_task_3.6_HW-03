@@ -1,6 +1,9 @@
 {% extends 'default.html' %}
 
 {% block title %}
-<p>{{ new.title }} : {{ new.data_pub }}</p>
-<p>{{ new.text }}</p>
+{% load filters %}
+<h3>{{ new.title|censor }}</h3>
+<p><i>{{ new.text|censor }} </i></p>
+{# дата загрузки в формате день.месяц.год #}
+<p>дата загрузки <b>{{ new.data_pub|date:"d.m.Y" }}</b></p>
 {% endblock %}

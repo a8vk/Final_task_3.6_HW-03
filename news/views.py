@@ -4,8 +4,8 @@ from .models import New
 
 # Create your views here.
 def index(request):
-    news = New.objects.all()
-    return render(request, 'default.html', context={'news': news})
+    news = New.objects.order_by('-data_pub')  # от более свежей к самой старой
+    return render(request, 'default.html', {'news': news})
 
 
 def detail(reguest, slug):
